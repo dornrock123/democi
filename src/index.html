@@ -95,6 +95,34 @@
     <button type="submit" class="btn">Login</button>
   </form>
 </div>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    let valid = true;
 
+    if (!username) {
+      document.getElementById('usernameError').style.display = 'block';
+      valid = false;
+    } else {
+      document.getElementById('usernameError').style.display = 'none';
+    }
+
+    if (!password) {
+      document.getElementById('passwordError').style.display = 'block';
+      valid = false;
+    } else {
+      document.getElementById('passwordError').style.display = 'none';
+    }
+
+    if (valid) {
+      console.log('Login successful');
+      // ที่นี่คุณสามารถเพิ่มโค้ดสำหรับการยืนยันผู้ใช้ เช่น เรียก API สำหรับการล็อกอิน
+    } else {
+      console.log('Please enter username and password');
+    }
+  });
+</script>
 </body>
 </html>
